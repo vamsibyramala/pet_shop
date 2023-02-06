@@ -52,7 +52,7 @@
   </dependencies>
 
   <build>
-    <finalName>softwaremaker</finalName>
+    <finalName>petshop</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
