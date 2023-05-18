@@ -1,21 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage ("taking code from SCM") {
+        stage (SCM) {
             steps {
                 git branch: 'main', url: 'https://github.com/vamsibyramala/pet_shop.git'
             }
         }
-        
-        stage ("building with maven") {
+        stage (build) {
             steps {
                 sh 'mvn clean package'
             }
         }
-        
-        stage ("deploy to tomcat") {
+        stage (deploy) {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://15.207.254.76:8080/')], contextPath: 'test', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://13.127.16.29:8081/')], contextPath: 'test', war: '**/*.war'
             }
         }
     }
