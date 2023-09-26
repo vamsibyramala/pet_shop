@@ -1,4 +1,2 @@
 # Jenkins trigger
-
-
 maven
