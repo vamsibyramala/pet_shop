@@ -1,2 +1,2 @@
 # Jenkins trigger
-this is petshop app
+this is petshop application
