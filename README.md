@@ -1,2 +1,2 @@
 # Jenkins trigger
-maven
+this is petshop app
