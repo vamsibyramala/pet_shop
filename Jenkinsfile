@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage (SCM) {
+        stage (git) {
             steps {
                 git branch: 'main', url: 'https://github.com/vamsibyramala/pet_shop.git'
             }
@@ -13,7 +13,7 @@ pipeline {
         }
         stage (deploy) {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://13.127.16.29:8081/')], contextPath: 'test', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://3.110.222.170:8081/')], contextPath: 'myweb', war: '**/*.war'
             }
         }
     }
