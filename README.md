@@ -2,4 +2,3 @@
 this is petshop application
 
 for webhook trigger
-for pollscm
