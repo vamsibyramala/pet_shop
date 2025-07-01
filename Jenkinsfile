@@ -1,7 +1,10 @@
 pipeline {
-    agent { label 'dev' }
-    tools {maven 'maven'}
-
+    agent {
+  label 'dev'
+}
+tools {
+  maven 'maven'
+}
     stages {
         stage('Git') {
             steps {
@@ -15,7 +18,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://172.31.8.55:8080/')], contextPath: 'vamsi', war: '**/*.war'
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://18.216.225.116:8080/')], contextPath: 'myapp', war: '**/*.war'
             }
         }
     }
